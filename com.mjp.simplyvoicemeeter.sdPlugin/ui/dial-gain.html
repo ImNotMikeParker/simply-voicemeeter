@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Strip / bus">
+    <sdpi-select setting="channel" datasource="getChannels" loading="Reading Voicemeeter…" show-refresh placeholder="Choose a strip or bus"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Step per click">
+    <sdpi-select setting="step" default="1">
+      <option value="0.5">0.5 dB</option>
+      <option value="1" selected>1 dB</option>
+      <option value="2">2 dB</option>
+      <option value="3">3 dB</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Press">
+    <sdpi-select setting="press" default="solo">
+      <option value="solo" selected>Solo</option>
+      <option value="mute">Mute / unmute</option>
+      <option value="none">Nothing</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Touch tap">
+    <sdpi-select setting="tap" default="mute">
+      <option value="mute" selected>Mute / unmute</option>
+      <option value="solo">Solo</option>
+      <option value="zero">Reset to 0 dB</option>
+      <option value="none">Nothing</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Color">
+    <sdpi-color setting="color" default="#22c1e8"></sdpi-color>
+  </sdpi-item>
+  <sdpi-item label="Meter">
+    <sdpi-checkbox setting="meter" default="true" label="Show a live level meter"></sdpi-checkbox>
+  </sdpi-item>
+  <div class="sd-help">The gain bar takes your color; the part above 0 dB lights in its complement so a hot channel stands out.</div>
+</body>
+</html>

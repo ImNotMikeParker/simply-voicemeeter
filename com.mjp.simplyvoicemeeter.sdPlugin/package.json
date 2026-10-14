@@ -1,0 +1,6 @@
+{
+  "name": "com.mjp.simplyvoicemeeter",
+  "private": true,
+  "type": "module",
+  "dependencies": { "koffi": "^3.3.3" }
+}

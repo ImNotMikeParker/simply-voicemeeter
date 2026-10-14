@@ -1,0 +1,4 @@
+logs/
+bin/*.map
+bin/probe.js
+package-lock.json

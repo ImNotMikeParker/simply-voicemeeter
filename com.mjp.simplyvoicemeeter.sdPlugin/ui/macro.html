@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Macro button">
+    <sdpi-select setting="id" datasource="getMacros" loading="Reading Voicemeeter…" show-refresh placeholder="Choose a button"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Mode">
+    <sdpi-select setting="mode" default="toggle">
+      <option value="toggle" selected>Toggle</option>
+      <option value="push">Push (held)</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Label">
+    <sdpi-textfield setting="label" placeholder="Shown on the key"></sdpi-textfield>
+  </sdpi-item>
+  <div class="sd-help">The logical ID is printed at the top centre of each button in the Voicemeeter Macro Buttons app, which must be running.</div>
+</body>
+</html>

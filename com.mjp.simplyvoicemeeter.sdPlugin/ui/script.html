@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Mode">
+    <sdpi-select setting="mode" default="press">
+      <option value="press" selected>Press (and hold for the second script)</option>
+      <option value="toggle">Toggle between the two scripts</option>
+      <option value="ptt">Push-to-talk (first on press, second on release)</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Script">
+    <sdpi-textarea setting="script" placeholder="Strip[0].Mute=1; Bus[0].Gain=-6;" rows="3"></sdpi-textarea>
+  </sdpi-item>
+  <sdpi-item label="Second script">
+    <sdpi-textarea setting="script2" placeholder="Optional" rows="3"></sdpi-textarea>
+  </sdpi-item>
+  <sdpi-item label="State parameter">
+    <sdpi-textfield setting="state" placeholder="Optional, e.g. Strip[0].Mute or Bus[0].device.name"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="On when equal to">
+    <sdpi-textfield setting="stateValue" placeholder="1, or a text such as Speakers (PRO X 2 LIGHTSPEED)"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="On image">
+    <sdpi-file setting="image" accept=".png,.jpg,.jpeg,.svg"></sdpi-file>
+  </sdpi-item>
+  <sdpi-item label="Off image">
+    <sdpi-file setting="image2" accept=".png,.jpg,.jpeg,.svg"></sdpi-file>
+  </sdpi-item>
+  <div class="sd-help">Same syntax as Voicemeeter's Macro Buttons and the Remote API: Strip[i].Gain=-6; Bus[i].Mute=1; Strip[i].Gain += 3; Command.Restart=1; Bus[0].device.wdm="Speakers (PRO X 2 LIGHTSPEED)". Toggle mode reads the state parameter to decide which script runs next.</div>
+</body>
+</html>

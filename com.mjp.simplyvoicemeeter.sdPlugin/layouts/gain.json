@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+  "id": "vm-gain",
+  "items": [
+    { "key": "title", "type": "text", "rect": [8, 6, 184, 20], "font": { "size": 13, "weight": 700 }, "alignment": "left", "color": "#9aa0a6", "text-overflow": "ellipsis", "zOrder": 1 },
+    { "key": "value", "type": "text", "rect": [8, 30, 184, 30], "font": { "size": 22, "weight": 800 }, "alignment": "center", "color": "#ffffff", "text-overflow": "ellipsis", "zOrder": 1 },
+    { "key": "gain", "type": "bar", "rect": [8, 66, 151, 10], "subtype": 0, "border_w": 0, "bar_bg_c": "#2a2e35", "bar_fill_c": "#22c1e8", "range": { "min": 0, "max": 1000 }, "value": 0, "zOrder": 1 },
+    { "key": "tick", "type": "bar", "rect": [160, 63, 3, 16], "subtype": 0, "border_w": 0, "bar_bg_c": "#5f6368", "bar_fill_c": "#5f6368", "range": { "min": 0, "max": 1 }, "value": 1, "zOrder": 1 },
+    { "key": "hot", "type": "bar", "rect": [164, 66, 28, 10], "subtype": 0, "border_w": 0, "bar_bg_c": "#2a2e35", "bar_fill_c": "#ff7a1a", "range": { "min": 0, "max": 1000 }, "value": 0, "zOrder": 1 },
+    { "key": "meter", "type": "bar", "rect": [8, 82, 184, 10], "subtype": 0, "border_w": 0, "bar_bg_c": "#1b1e24", "bar_fill_c": "#3ad47e", "range": { "min": 0, "max": 1000 }, "value": 0, "zOrder": 1 }
+  ]
+}

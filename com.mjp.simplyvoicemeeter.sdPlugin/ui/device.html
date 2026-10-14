@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Bus">
+    <sdpi-select setting="bus" datasource="getBuses" loading="Reading Voicemeeter…" show-refresh placeholder="Choose an output bus (A1, A2, A3)"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Device">
+    <sdpi-select setting="device" datasource="getDevices" loading="Reading Voicemeeter…" show-refresh placeholder="Choose the output device"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Label">
+    <sdpi-textfield setting="label" placeholder="Shown on the key, e.g. Headset"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Image">
+    <sdpi-file setting="image" accept=".png,.jpg,.jpeg,.svg"></sdpi-file>
+  </sdpi-item>
+  <details><summary>Swap between two devices</summary>
+  <sdpi-item label="Second device">
+    <sdpi-select setting="device2" datasource="getDevices2" loading="Reading Voicemeeter…" show-refresh placeholder="None"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Second label">
+    <sdpi-textfield setting="label2" placeholder="e.g. Speakers"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Second image">
+    <sdpi-file setting="image2" accept=".png,.jpg,.jpeg,.svg"></sdpi-file>
+  </sdpi-item>
+  </details>
+  <div class="sd-help">With one device, the key selects it and lights up while it is active. With two, each press swaps and the key shows whichever is live. WDM is the right choice for almost everything.</div>
+</body>
+</html>

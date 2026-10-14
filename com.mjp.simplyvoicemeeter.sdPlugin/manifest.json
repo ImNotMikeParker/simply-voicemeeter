@@ -1,0 +1,190 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Simply Voicemeeter",
+  "Version": "1.0.0.0",
+  "Author": "Mike Parker",
+  "Description": "Voicemeeter on your Stream Deck, live. Mute keys with VU meters, gain keys and dials with dB readouts, one-tap output device swapping with the active device shown, routing, macro buttons, presets, and Voicemeeter's own script syntax for anything else. Works with Voicemeeter, Banana and Potato. Not affiliated with VB-Audio.",
+  "Category": "Simply Voicemeeter",
+  "CategoryIcon": "imgs/plugin/category-icon",
+  "Icon": "imgs/plugin/marketplace",
+  "CodePath": "bin/plugin.js",
+  "UUID": "com.mjp.simplyvoicemeeter",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Nodejs": {
+    "Version": "24",
+    "Debug": "enabled"
+  },
+  "Actions": [
+    {
+      "Name": "Mute",
+      "UUID": "com.mjp.simplyvoicemeeter.mute",
+      "Icon": "imgs/actions/mute/icon",
+      "Tooltip": "Mute a strip or bus. Toggle, push-to-talk, or set. Shows the live state and a level meter.",
+      "PropertyInspectorPath": "ui/mute.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/mute/key"
+        }
+      ]
+    },
+    {
+      "Name": "Gain",
+      "UUID": "com.mjp.simplyvoicemeeter.gain",
+      "Icon": "imgs/actions/gain/icon",
+      "Tooltip": "Set a strip or bus gain: press for one value, hold for another, optionally as a fade. Live dB and level meter.",
+      "PropertyInspectorPath": "ui/gain.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/gain/key"
+        }
+      ]
+    },
+    {
+      "Name": "Output Device",
+      "UUID": "com.mjp.simplyvoicemeeter.device",
+      "Icon": "imgs/actions/device/icon",
+      "Tooltip": "Send a bus to a given output device, or swap between two (headset / speakers). The key shows which one is live.",
+      "PropertyInspectorPath": "ui/device.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/device/key"
+        }
+      ]
+    },
+    {
+      "Name": "Route",
+      "UUID": "com.mjp.simplyvoicemeeter.route",
+      "Icon": "imgs/actions/route/icon",
+      "Tooltip": "Toggle a strip's assignment to a bus (A1, B1, …) with live state.",
+      "PropertyInspectorPath": "ui/route.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/route/key"
+        }
+      ]
+    },
+    {
+      "Name": "Macro Button",
+      "UUID": "com.mjp.simplyvoicemeeter.macro",
+      "Icon": "imgs/actions/macro/icon",
+      "Tooltip": "Toggle or push a Voicemeeter Macro Button, with its state shown live.",
+      "PropertyInspectorPath": "ui/macro.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/macro/key"
+        }
+      ]
+    },
+    {
+      "Name": "Script",
+      "UUID": "com.mjp.simplyvoicemeeter.script",
+      "Icon": "imgs/actions/script/icon",
+      "Tooltip": "Run Voicemeeter commands in its own syntax (Strip[0].Mute=1; Bus[0].Gain=-6;). Press / hold, toggle between two scripts, or push-to-talk. Optional live state from any parameter.",
+      "PropertyInspectorPath": "ui/script.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": true,
+      "States": [
+        {
+          "Image": "imgs/actions/script/key"
+        }
+      ]
+    },
+    {
+      "Name": "Preset",
+      "UUID": "com.mjp.simplyvoicemeeter.preset",
+      "Icon": "imgs/actions/preset/icon",
+      "Tooltip": "Recall a Voicemeeter preset scene, or load a saved XML configuration.",
+      "PropertyInspectorPath": "ui/preset.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/preset/key"
+        }
+      ]
+    },
+    {
+      "Name": "Voicemeeter",
+      "UUID": "com.mjp.simplyvoicemeeter.status",
+      "Icon": "imgs/actions/status/icon",
+      "Tooltip": "Connection, edition and version. Press to show the Voicemeeter window, hold to restart the audio engine.",
+      "PropertyInspectorPath": "ui/simple.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/status/key"
+        }
+      ]
+    },
+    {
+      "Name": "Gain (Dial)",
+      "UUID": "com.mjp.simplyvoicemeeter.dial-gain",
+      "Icon": "imgs/actions/gain/icon",
+      "Tooltip": "Stream Deck + dial: a strip or bus gain with dB, a level meter and the gain position on the touch strip. Press for solo, tap to mute.",
+      "PropertyInspectorPath": "ui/dial-gain.html",
+      "Controllers": [
+        "Encoder"
+      ],
+      "UserTitleEnabled": false,
+      "Encoder": {
+        "layout": "layouts/gain.json",
+        "Icon": "imgs/actions/gain/icon",
+        "StackColor": "#22c1e8",
+        "TriggerDescription": {
+          "Rotate": "Gain",
+          "Push": "Solo",
+          "Touch": "Mute"
+        }
+      },
+      "States": [
+        {
+          "Image": "imgs/actions/gain/key"
+        }
+      ]
+    }
+  ]
+}

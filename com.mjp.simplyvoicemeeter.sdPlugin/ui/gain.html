@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Strip / bus">
+    <sdpi-select setting="channel" datasource="getChannels" loading="Reading Voicemeeter…" show-refresh placeholder="Choose a strip or bus"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Press sets (dB)">
+    <sdpi-textfield setting="a" placeholder="0"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Hold sets (dB)">
+    <sdpi-textfield setting="b" placeholder="-60"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Fade (ms)">
+    <sdpi-textfield setting="fadeMs" placeholder="0 = instant"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Meter">
+    <sdpi-checkbox setting="meter" default="true" label="Show a live level meter"></sdpi-checkbox>
+  </sdpi-item>
+  <div class="sd-help">Range -60 to +12 dB. A fade time makes Voicemeeter glide to the value instead of jumping.</div>
+</body>
+</html>

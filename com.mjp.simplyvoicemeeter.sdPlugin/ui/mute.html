@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8" />
+  <title>Simply Voicemeeter</title>
+  <script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+  <link rel="stylesheet" href="common.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <div id="status"></div>
+  <hr />
+  <sdpi-item label="Strip / bus">
+    <sdpi-select setting="channel" datasource="getChannels" loading="Reading Voicemeeter…" show-refresh placeholder="Choose what to mute"></sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Mode">
+    <sdpi-select setting="mode" default="toggle">
+      <option value="toggle" selected>Toggle</option>
+      <option value="ptt">Push-to-talk (unmuted while held)</option>
+      <option value="mute">Mute</option>
+      <option value="unmute">Unmute</option>
+    </sdpi-select>
+  </sdpi-item>
+  <sdpi-item label="Meter">
+    <sdpi-checkbox setting="meter" default="true" label="Show a live level meter"></sdpi-checkbox>
+  </sdpi-item>
+  <div class="sd-help">Names come straight from Voicemeeter's labels. The key follows changes made in Voicemeeter itself.</div>
+</body>
+</html>
